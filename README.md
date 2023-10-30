@@ -1,5 +1,3 @@
-# Docker
-
 ## Prerequisities
 
 You need to have Docker installed.
@@ -7,6 +5,8 @@ You need to have Docker installed.
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
+
+## How to Build and Run
 
 ### Run the Build Command
 
@@ -24,15 +24,18 @@ To Open App
 http://localhost:8000
 ```
 
+## How to Stop Docker Image
+
 ### Stop Docker
 
 ```shell
 docker stop dnd-magic-item-card
 ```
 
-###  To Remove Container and Image
+## How to Remove Docker Containers and Images
 Useful if you want to build them again.
 
+###  To Remove Container and Image
 After stopping find the container id.
 ```shell
 docker container ls -a
