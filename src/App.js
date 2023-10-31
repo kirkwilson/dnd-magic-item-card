@@ -80,7 +80,7 @@ class CardEditor extends Component {
 
   onSave = () => {
     html2canvas(this.ref).then(canvas => {
-      const href = canvas.toDataURL("image/png");
+      const href = canvas.toDataURL("image/jpeg", 1.0);
       this.setState({ href });
     })
   }
@@ -147,7 +147,7 @@ class CardEditor extends Component {
               Save
             </button>
           </div>
-          {href && <a download="image.png" href={href}>Download</a>}
+          {href && <a download="image.jpeg" href={href}>Download</a>}
         </div>
         <Card key={cardType} onRef={ref => this.ref = ref} {...this.state} />
       </div>
@@ -164,7 +164,7 @@ class App extends Component {
 
   onSave = () => {
     html2canvas(this.ref).then(canvas => {
-      const href = canvas.toDataURL("image/png");
+      const href = canvas.toDataURL("image/jpeg", 1.0);
       this.setState({ href });
     })
   }
@@ -180,7 +180,7 @@ class App extends Component {
       <Fragment>
         <button className="print-mode" onClick={this.onClick}>Print Mode</button>
         {printMode && <button className="download-all" onClick={this.onSave}>Create Image</button>}
-        {href && <a className="download-cards" download="cards.png" href={href}>Download Image</a>}
+        {href && <a className="download-cards" download="cards.jpeg" href={href}>Download Image</a>}
         <div className={classes} ref={ref => this.ref = ref}>
           {R.range(0, 9).map(i => (
             <CardEditor key={i} localStorageKey={`card${i}`} />
